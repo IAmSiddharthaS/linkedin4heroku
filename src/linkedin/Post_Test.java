@@ -106,16 +106,13 @@ public class Post_Test {
 		in.close();
 
 		//print result
-		System.out.println(response.toString());
-		
-		/*JSONObject jsonObj = new JSONObject(response.toString());
-		 
-		obj_LinkedInProfile.setFirstName(jsonObj.getString("firstName"));
-		obj_LinkedInProfile.setLastName(jsonObj.getString("lastName"));
-		obj_LinkedInProfile.setHeadline(jsonObj.getString("headline"));
-		obj_LinkedInProfile.setId(jsonObj.getString("id"));*/
-		
-		System.out.println(access_token);
+				System.out.println("API Response: "+response.toString());
+				
+				JSONObject jsonObj = new JSONObject(response.toString());
+				
+				obj_LinkedInProfile.setLastName(jsonObj.getString("localizedLastName"));
+				obj_LinkedInProfile.setFirstName(jsonObj.getString("localizedFirstName").trim());
+				System.out.println("access_token: "+access_token);
 		
 
 		return obj_LinkedInProfile;

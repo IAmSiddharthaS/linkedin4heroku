@@ -27,7 +27,8 @@ LinkedInProfile OBJ_LinkedInProfile=obj_Post.sendPost(code);
  Head Line: <%=OBJ_LinkedInProfile.getHeadline() %><br>
  ID : <%=OBJ_LinkedInProfile.getId() %><br> --%>
 
-
+Fist Name : <%=OBJ_LinkedInProfile.getFirstName() %><br>
+Last Name:<%=OBJ_LinkedInProfile.getLastName() %><br>
 
 
 </body>
