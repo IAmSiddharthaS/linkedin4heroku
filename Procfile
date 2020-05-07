@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/java-json.jar --port$PORT target/*.war
+web: java -jar target/linkedin
