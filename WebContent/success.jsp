@@ -27,9 +27,41 @@ LinkedInProfile OBJ_LinkedInProfile=obj_Post.sendPost(code);
  Head Line: <%=OBJ_LinkedInProfile.getHeadline() %><br>
  ID : <%=OBJ_LinkedInProfile.getId() %><br> --%>
 
-Fist Name : <%=OBJ_LinkedInProfile.getFirstName() %><br>
+<%-- Fist Name : <%=OBJ_LinkedInProfile.getFirstName() %><br>
 Last Name:<%=OBJ_LinkedInProfile.getLastName() %><br>
 
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 
+"The full URL of this page is:<br>" + window.location.href;
+</script>
+<script type="text/javascript">
+ window.close();
+</script> --%>
+
+<p style="text-align:center">This window will close automatically within <span id="counter">10</span> second(s).</p>
+<script type="text/javascript">
+
+
+
+ function countdown() {
+
+    var i = document.getElementById('counter');
+
+    i.innerHTML = parseInt(i.innerHTML)-1;
+
+ if (parseInt(i.innerHTML)<=0) {
+
+  window.close();
+
+ }
+
+}
+
+setInterval(function(){ countdown(); },1000);
+
+</script>
 
 </body>
 </html>

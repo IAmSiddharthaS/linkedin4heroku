@@ -14,9 +14,9 @@ import org.json.JSONObject;
 
 public class Post_Test {
 
-	 
-
-	
+	public static String firstName="";
+    public static String lastName="";
+	public static boolean auth=false;
 	
 	
 	// HTTP POST request
@@ -44,7 +44,8 @@ public class Post_Test {
 		System.out.println("\nSending 'POST' request to URL : " + url);
 		System.out.println("Post parameters : " + urlParameters);
 		System.out.println("Response Code : " + responseCode);
-
+        System.out.println("Code:"+code);
+        
 		BufferedReader in = new BufferedReader(
 		        new InputStreamReader(con.getInputStream()));
 		String inputLine;
@@ -65,13 +66,14 @@ public class Post_Test {
 		LinkedInProfile obj_LinkedInProfile=new LinkedInProfile();
 		obj_LinkedInProfile=sendGet(access_token);
 		
+		
 		return obj_LinkedInProfile;
 
 	}
 	
 	
 	
-	private static LinkedInProfile sendGet(String access_token) throws Exception {
+	public static LinkedInProfile sendGet(String access_token) throws Exception {
 		
 		LinkedInProfile obj_LinkedInProfile=new LinkedInProfile();
 		
@@ -112,9 +114,13 @@ public class Post_Test {
 				
 				obj_LinkedInProfile.setLastName(jsonObj.getString("localizedLastName"));
 				obj_LinkedInProfile.setFirstName(jsonObj.getString("localizedFirstName").trim());
+				
+				firstName= jsonObj.getString("localizedFirstName");
+				lastName=jsonObj.getString("localizedLastName");
+				
 				System.out.println("access_token: "+access_token);
-		
-
+		        System.out.println("First Name: "+firstName);
+		        System.out.println("Last Name :"+lastName);
 		return obj_LinkedInProfile;
 	}
 	
